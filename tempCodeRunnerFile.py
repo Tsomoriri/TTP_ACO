@@ -1,0 +1,1 @@
+allAnts = self.once_ants_colony()
