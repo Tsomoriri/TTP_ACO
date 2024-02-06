@@ -68,12 +68,10 @@ class TTP:
             sub_items = self.info['node_item'][i]
             if not sub_items:  # Skip this iteration if sub_items is empty
                 continue
-            pheromone_values = [self.pheromone[item['ASSIGNED_NODE_NUMBER']-1] for item in sub_items]
-            total_pheromone = sum(pheromone_values)
-            if total_pheromone > 0:
-                probabilities = [pheromone / total_pheromone for pheromone in pheromone_values]
+            if self.pheromone[i] < self.pheromone[i-1]:
+                probabilities = [0.5]*len(sub_items)
             else:
-                probabilities = [1 / len(sub_items) for _ in sub_items]  # Equal probabilities if no pheromone
+                probabilities = [0.8]*len(sub_items)
             k = len(sub_items)  # Choose at most the number of items in sub_items
             chosen_items = random.choices(sub_items, probabilities, k=k)  # Choose items based on probabilities
             ret[i] = [1 if item in chosen_items else 0 for item in sub_items]  # Mark chosen items with 1, others with 0
@@ -144,11 +142,10 @@ class TTP:
         # time: time of ant
         # profit: profit of ant with renting ratio
 
-        # update pheromone
-        time_normalised = self.normalize_number(time,0,10000)
-        profit_normalised = self.normalize_number(profit_RR,0,10000000)
-        #gamma = (self.alpha_pheromone * self.TSPconstant_Q / time) + (self.beta_pheromone * profit_RR)  # caculate gamma which is the scalarising function
-        gamma = time_normalised * self.alpha_pheromone + profit_normalised * self.beta_pheromone
+        # update pheromone  
+        # caculate gamma which is the scalarising function
+        gamma = ((self.alpha_pheromone * self.TSPconstant_Q / time) + (self.beta_pheromone * profit_RR)) /1000  
+        
         for i in range(len(path)):
             self.pheromone[path[i]] = gamma  # update pheromone with gamma
 
