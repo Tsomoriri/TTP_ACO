@@ -238,7 +238,7 @@ class TTP:
        
         # Create an instance of NonDominatedSet
         non_dominated_set = NonDominatedSet()
-        t = 1  # loop time counter initialisation
+        
         run = []
         obj = []
         itr = []
@@ -246,6 +246,7 @@ class TTP:
         obj2 = []
         ants_init_position = self.ants_init()  # initial ants position
         for ant in tqdm(ants_init_position):  # for each ant
+            t = 1  # loop time counter initialisation
             while t < self.loop:  # while loop time counter less than loop time
                 path = self.node_chose(ant)  # chose path
                 item_selection = self.item_chose(path)  # chose item
