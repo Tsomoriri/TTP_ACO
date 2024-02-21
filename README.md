@@ -17,11 +17,10 @@ Multi-objective Ant colony optimsation with single colony and scalarising functi
 - [License](#license)
 
 ## Installation
-Detail the steps required to install the project, including any prerequisites or dependencies that need to be installed first. For example:
 
 ```bash
-git clone https://github.com/yourusername/projectname.git
-cd projectname
+git clone https://github.com/tsomoriri/TTP_ACO
+cd TTP_ACO
 pip install -r requirements.txt
 ```
 ## Usage
