@@ -1,7 +1,7 @@
-# solution to Travelling Thief problem using Ant colony optimisation
+# Solution to Travelling Thief problem using Ant colony optimisation
 
 ## Introduction
-Provide a brief overview of the project, its purpose, and what it aims to achieve. Mention the main technologies used and any unique features or capabilities.
+Multi-objective Ant colony optimsation with single colony and scalarising functions. This script acts a template for ablation study of paraemters of ant colony and Travelling thief problem
 
 ## Table of Contents
 - [Introduction](#introduction)
