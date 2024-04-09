@@ -6,15 +6,6 @@ Multi-objective Ant colony optimsation with single colony and scalarising functi
 ## Table of Contents
 - [Introduction](#introduction)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Dependencies](#dependencies)
-- [Configuration](#configuration)
-- [Documentation](#documentation)
-- [Examples](#examples)
-- [Troubleshooting](#troubleshooting)
-- [Contributors](#contributors)
-- [License](#license)
 
 ## Installation
 
